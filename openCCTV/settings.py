@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_otp',
+    'django_otp.plugins.otp_static',
+    'django_otp.plugins.otp_totp',
+
     'core.apps.CoreConfig',
     'accounts.apps.LoginConfig',
 ]
@@ -50,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django_otp.middleware.OTPMiddleware',
 ]
 
 ROOT_URLCONF = 'openCCTV.urls'
@@ -140,3 +146,6 @@ MESSAGE_TAGS = {
         messages.WARNING: 'alert-warning',
         messages.ERROR: 'alert-danger',
  }
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'

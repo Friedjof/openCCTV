@@ -1,26 +1,60 @@
-.topnav {
+.top_navigation {
     padding-left: 35px;
     padding-right: 35px;
     overflow: hidden;
     background-color: #593443;
     border-bottom: 5px solid #2A4165;
+    display: block;
 }
 
-.topnav a {
+.menu_items {
+    float: left;
+    overflow: hidden;
+    width: 60%;
+}
+
+.menu_items a {
     float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 23px;
+    font-size: 17px;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+.menu_items a:hover {
+    background-color: #2A4165;
+    color: white;
 }
 
-.topnav a.active {
-    background-color: #173056;
+.menu_items a.active {
+}
+
+.logo_section {
+    display: block;
+    float: left;
+}
+
+.logo_section img {
+    text-align: center;
+    height: 54px;
+}
+
+.profile_section {
+    float: right;
+    display: block;
+}
+
+.profile_section a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.profile_section a:hover {
+    background-color: #2A4165;
     color: white;
 }

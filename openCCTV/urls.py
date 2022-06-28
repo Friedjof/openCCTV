@@ -16,10 +16,31 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+# temporary to show two-factor auth
+from django_otp.admin import OTPAdminSite
+
+
+class OTPAdmin(OTPAdminSite):
+    pass
+
+
+from django.contrib.auth.models import User
+from django_otp.plugins.otp_totp.models import TOTPDevice
+
+admin_site = OTPAdmin(name='OTPAdmin')
+admin_site.register(User)
+admin_site.register(TOTPDevice)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin_site.urls),
+    path('dadmin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('core.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

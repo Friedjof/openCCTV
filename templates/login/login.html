@@ -3,12 +3,14 @@
 {% block content %}
 
     <div class="login">
+        <img src="/media/logo.png" alt="logo">
         <h1>Login</h1>
         <form method="post" action="/accounts/login/">
             {% csrf_token %}
             <label>
                 <input type="text" name="username" placeholder="Username" required="required"/>
                 <input type="password" name="password" placeholder="Password" required="required"/>
+                <input type="number" name="otp" placeholder="123456" required="required"/>
             </label>
             <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
         </form>
