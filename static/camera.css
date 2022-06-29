@@ -1,0 +1,75 @@
+@media screen and (min-width: 1050px) {
+    .camera_stream {
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 35%;
+    }
+
+    .camera_stream img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sidebar {
+        display: block;
+        float: left;
+        width: 30%;
+        height: 100%;
+        padding: 50px;
+        background-color: rgba(150, 150, 150, 0.30);
+    }
+
+    .sidebar input {
+        width: 100px;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+
+@media screen and (min-width: 750px) and (max-width: 1049px) {
+    .camera_stream {
+        text-align: center;
+        display: block;
+        float: left;
+        width: 30%;
+        margin-left: 15px;
+    }
+
+    .camera_stream img {
+        width: 500px;
+    }
+
+    .sidebar {
+        display: block;
+        float: left;
+        width: 30%;
+        height: 100%;
+        padding: 50px;
+        background-color: rgba(150, 150, 150, 0.30);
+    }
+
+    .sidebar input {
+        width: 100px;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 749px) {
+    .sidebar {
+        display: none;
+    }
+
+    .camera_stream {
+        text-align: center;
+        display: block;
+        float: left;
+    }
+
+    .camera_stream img {
+        width: 90%;
+    }
+}

@@ -1,9 +1,9 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <div style="text-align: center;">
+    <div class="camera_stream">
         <h1> Open CCTV </h1>
-        <img src="{% url 'video_stream' %}">
+        <img style="width: 125%" src="{% url 'video_stream' %}" alt="Open CCVT Stream">
     </div>
 
 {% endblock %}

@@ -22,13 +22,13 @@ from django.conf.urls.static import static
 # temporary to show two-factor auth
 from django_otp.admin import OTPAdminSite
 
+from django.contrib.auth.models import User
+from django_otp.plugins.otp_totp.models import TOTPDevice
+
 
 class OTPAdmin(OTPAdminSite):
     pass
 
-
-from django.contrib.auth.models import User
-from django_otp.plugins.otp_totp.models import TOTPDevice
 
 admin_site = OTPAdmin(name='OTPAdmin')
 admin_site.register(User)
@@ -36,7 +36,6 @@ admin_site.register(TOTPDevice)
 
 urlpatterns = [
     path('admin/', admin_site.urls),
-    path('dadmin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('core.urls')),

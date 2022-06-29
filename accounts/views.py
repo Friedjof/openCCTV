@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django_otp import devices_for_user, verify_token, match_token
+from django_otp import devices_for_user, match_token
 
 
 # Create your views here.

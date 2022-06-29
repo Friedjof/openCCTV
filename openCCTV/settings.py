@@ -149,3 +149,13 @@ MESSAGE_TAGS = {
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+DETECTOR_PATHS = [
+#    BASE_DIR / '/object_detection/haarcascade_eye.xml',
+#    BASE_DIR / 'object_detection/haarcascade_eye_tree_eyeglasses.xml',
+    BASE_DIR / 'object_detection/haarcascade_frontalface.xml',
+    BASE_DIR / 'object_detection/haarcascade_profileface.xml',
+#    BASE_DIR / 'object_detection/haarcascade_smile.xml',
+#    BASE_DIR / 'object_detection/haarcascade_upperbody.xml',
+#    BASE_DIR / 'object_detection/haarcascade_fullbody.xml'
+]

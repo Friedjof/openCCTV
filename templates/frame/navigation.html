@@ -1,21 +1,56 @@
-<div class="top_navigation">
-    <div class="logo_section">
-        <img src="/media/logo.png" alt="logo">
+<div>
+    <div class="top_navigation">
+        <div class="logo_section">
+            <img src="/media/logo.png" alt="logo">
+        </div>
+        <div class="menu_items">
+            <a href="/">Home</a>
+            <a href="/">About</a>
+            <a href="/">Camera</a>
+            <a href="/settings">Configuration</a>
+        </div>
+        <div class="profile_section">
+            {% block content %}
+                {% if user.is_authenticated %}
+                    <a href="/accounts/profile">{{ user.username }}</a>
+                    <a href="/accounts/logout">Log Out</a>
+                {% else %}
+                    <a href="/accounts/login">Log In</a>
+                {% endif %}
+            {% endblock %}
+        </div>
     </div>
-    <div class="menu_items">
-        <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Camera</a>
-        <a href="/">Configuration</a>
-    </div>
-    <div class="profile_section">
-        {% block content %}
-            {% if user.is_authenticated %}
-                <a href="/accounts/profile">{{ user.username }}</a>
-                <a href="/accounts/logout">Log Out</a>
-            {% else %}
-                <a href="/accounts/login">Log In</a>
-            {% endif %}
-        {% endblock %}
+    <div class="mobil_navigation" id="#mobil_nav">
+        <div class="mobil_nav">
+            <a href="#home" class="active">Logo</a>
+            <div id="nav_item">
+                <a href="/">Home</a>
+                <a href="/">About</a>
+                <a href="/">Camera</a>
+                <a href="/settings">Configuration</a>
+
+                {% block content_mobile %}
+                    {% if user.is_authenticated %}
+                        <a href="/accounts/profile">{{ user.username }}</a>
+                        <a href="/accounts/logout">Log Out</a>
+                    {% else %}
+                        <a href="/accounts/login">Log In</a>
+                    {% endif %}
+                {% endblock %}
+            </div>
+            <a href="javascript:void(0);" class="icon" style="border-radius: 0;" onclick="toggle_navigation()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </div>
 </div>
+<script>
+    function toggle_navigation() {
+        const x = document.getElementById("nav_item");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
